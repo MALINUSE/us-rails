@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: us-rails_production
-  username: us-rails
-  password: <%= ENV['US-RAILS_DATABASE_PASSWORD'] %>
+  username: imidsac
+  password: <%= ENV['PASSWORD'] %>
