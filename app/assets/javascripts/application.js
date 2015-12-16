@@ -12,5 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
+//= require bootstrap-hover-dropdown.min.js
+//= require back-to-top.js
+//= require jquery.placeholder.js
+//= require jquery.prettyPhoto.js
+//= require jquery.flexslider-min.js
+//= require jflickrfeed.min.js
+//= require js/main
 //= require turbolinks
 //= require_tree .
