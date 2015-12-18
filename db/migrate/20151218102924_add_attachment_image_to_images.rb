@@ -8,4 +8,4 @@ class AddAttachmentImageToImages < ActiveRecord::Migration
   def self.down
     remove_attachment :images, :image
   end
-endrails g model image and rails generate paperclip image image
+end
