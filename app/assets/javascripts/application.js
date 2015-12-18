@@ -19,6 +19,6 @@
 //= require jquery.prettyPhoto.js
 //= require jquery.flexslider-min.js
 //= require jflickrfeed.min.js
-//= require js/main
+//= require main.js
 //= require turbolinks
 //= require_tree .
