@@ -54,3 +54,9 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-rails'
 
 gem 'globalize', '~> 5.0.0'
+
+gem 'devise', '~> 3.2'
+gem 'devise-bootstrap-views'
+
+gem 'paperclip', '~> 4.3'
+gem 'aws-sdk'
