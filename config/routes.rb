@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :comments
+  resources :categories
+  resources :posts
   get 'welcomes/home'
   root 'welcomes#home'
 
