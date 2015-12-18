@@ -20,5 +20,4 @@
 //= require jquery.flexslider-min.js
 //= require jflickrfeed.min.js
 //= require main.js
-//= require turbolinks
 //= require_tree .
