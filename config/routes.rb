@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :pages
+  resources :pages#, except: :show
+  #get 'pages/:id' => 'pages#show', as: :pages
   resources :links
   devise_for :users
   resources :comments
