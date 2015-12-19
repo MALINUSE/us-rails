@@ -20,4 +20,4 @@
 //= require jquery.flexslider-min.js
 //= require jflickrfeed.min.js
 //= require main.js
-//= require_tree .
+//= require pages

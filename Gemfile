@@ -60,3 +60,5 @@ gem 'devise-bootstrap-views'
 
 gem 'paperclip', '~> 4.3'
 gem 'aws-sdk'
+
+gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
