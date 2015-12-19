@@ -4,6 +4,7 @@ class CreatePages < ActiveRecord::Migration
       t.string :name
       t.string :slug
       t.text :content
+      t.references :user, index: true
 
       t.timestamps null: false
     end

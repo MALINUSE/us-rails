@@ -18,9 +18,12 @@ ActiveRecord::Schema.define(version: 20151219091920) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "categories", ["user_id"], name: "index_categories_on_user_id", using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.string   "name"
@@ -31,6 +34,7 @@ ActiveRecord::Schema.define(version: 20151219091920) do
   end
 
   create_table "images", force: :cascade do |t|
+    t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
@@ -38,6 +42,8 @@ ActiveRecord::Schema.define(version: 20151219091920) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
+
+  add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree
 
   create_table "links", force: :cascade do |t|
     t.string   "url"
@@ -54,20 +60,25 @@ ActiveRecord::Schema.define(version: 20151219091920) do
     t.string   "name"
     t.string   "slug"
     t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_index "pages", ["slug"], name: "index_pages_on_slug", using: :btree
+  add_index "pages", ["user_id"], name: "index_pages_on_user_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
     t.boolean  "published"
     t.datetime "published_at"
+    t.integer  "user_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
