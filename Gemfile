@@ -52,6 +52,7 @@ end
 
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-rails'
+gem 'will_paginate'
 
 gem 'globalize', '~> 5.0.0'
 
@@ -62,3 +63,9 @@ gem 'paperclip', '~> 4.3'
 gem 'aws-sdk'
 
 gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
+gem 'wysiwyg-rails'
+
+
+gem 'activeadmin', github: 'activeadmin'
+gem 'active_admin_editor'
+gem 'autoprefixer-rails'
