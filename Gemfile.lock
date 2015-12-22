@@ -17,6 +17,13 @@ GIT
       sass-rails
 
 GIT
+  remote: git://github.com/nerian/bootstrap-wysihtml5-rails.git
+  revision: a4b413aa1c9d5f614a33c3c1f5731ed8bc6302de
+  specs:
+    bootstrap-wysihtml5-rails (0.3.3.7)
+      railties (>= 3.0)
+
+GIT
   remote: https://github.com/jejacks0n/mercury.git
   revision: 1cc637b0bccea19085f824d2881c6513ed5ee8ae
   specs:
@@ -258,6 +265,7 @@ DEPENDENCIES
   autoprefixer-rails
   aws-sdk
   bootstrap-sass (~> 3.3.5)
+  bootstrap-wysihtml5-rails!
   byebug
   coffee-rails (~> 4.1.0)
   devise (~> 3.2)

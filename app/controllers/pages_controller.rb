@@ -40,7 +40,8 @@ class PagesController < ApplicationController
   # PATCH/PUT /pages/1
   # PATCH/PUT /pages/1.json
   def update
-=begin
+
+
     respond_to do |format|
       if @page.update(page_params)
         format.html { redirect_to @page, notice: 'Page was successfully updated.' }
@@ -50,12 +51,14 @@ class PagesController < ApplicationController
         format.json { render json: @page.errors, status: :unprocessable_entity }
       end
     end
-=end
 
+
+=begin
     @page.name = params[:content][:page_name][:value]
     @page.content = params[:content][:page_content][:value]
     @page.save!
     render text: ""
+=end
 
   end
 

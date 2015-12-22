@@ -1,3 +1,7 @@
+<script>
+  $('div#froala-editor').froalaEditor({key: 'MD-17zyD5eC-7F-7eqgeE-11lA-8iztxrE4cnoG4qvcC7C-'});
+</script>
+
 <%= form_for(@post) do |f| %>
     <% if @post.errors.any? %>
         <div id="error_explanation">
@@ -16,7 +20,9 @@
     </div><!--//form-group-->
     <div class="form-group body">
       <%= f.label :body %><br>
+      <div id="froala-editor">
       <%= f.text_area :body, id: "body", class: "form-control", placeholder: "Dody" %>
+      </div>
     </div><!--//form-group-->
     <%= f.submit :class => "btn btn-theme" %>
 <% end %>

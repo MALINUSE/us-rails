@@ -19,20 +19,22 @@
     </div>
   </div><!--//to-bar-->
   <div class="header-main container">
-    <h1 class="logo col-md-4 col-sm-4">
+    <h1 class="logo col-md-2 col-sm-2">
       <%=link_to image_tag("logo.png"), root_path %>
     </h1><!--//logo-->
-    <div class="info col-md-8 col-sm-8">
+
+    <h1 class="logo col-md-8 col-sm-8 text-center">
+      UNIVERSITÉ DU SAHEL
+    </h1><!--//logo-->
+
+    <div class="info col-md-2 col-sm-2">
       <ul class="menu-top navbar-right hidden-xs">
         <li class="divider"><a href="index.html">Home</a></li>
         <li class="divider"><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul><!--//menu-top-->
       <br />
-      <div class="contact pull-right">
-        <p class="phone"><i class="fa fa-phone"></i>Call us today 0800 123 4567</p>
-        <p class="email"><i class="fa fa-envelope"></i><a href="#">enquires@website.com</a></p>
-      </div><!--//contact-->
+
     </div><!--//info-->
   </div><!--//header-main-->
 </header><!--//header-->
@@ -50,50 +52,28 @@
     </div><!--//navbar-header-->
     <div class="navbar-collapse collapse" id="navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="active nav-item"><%= link_to "Home", root_path %></li>
+        <li class="active nav-item"><%= link_to "ACCEUIL", root_path, class: "" %></li>
         <li class="nav-item dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">About Us <i class="fa fa-angle-down"></i></a>
+          <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">L'UNIVERSITÉ <i class="fa fa-angle-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="courses.html">Course List</a></li>
-            <li><a href="course-single.html">Single Course (with image)</a></li>
-            <li><a href="course-single-2.html">Single Course (with video)</a></li>
-            <li class="dropdown-submenu">
-              <a class="trigger" tabindex="-1" href="#">Menu Levels <i class="fa fa-angle-right"></i></a>
-              <ul class="dropdown-menu">
-                <li><a tabindex="-1" href="#">Submenu Level 2</a></li>
-                <li class="dropdown-submenu">
-                  <a class="trigger" href="#">Submenu Level 2 <i class="fa fa-angle-right"></i></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Submenu Level 3</a></li>
-                    <li><a href="#">Submenu Level 3</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Submenu Level 2</a></li>
-                <li><a href="#">Submenu Level 2</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Administrations <i class="fa fa-angle-down"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="news.html">News List</a></li>
-            <li><a href="news-single.html">Single News (with image)</a></li>
-            <li><a href="news-single-2.html">Single News (with video)</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">News <i class="fa fa-angle-down"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="news.html">News List</a></li>
-            <li><a href="news-single.html">Single News (with image)</a></li>
-            <li><a href="news-single-2.html">Single News (with video)</a></li>
+            <li><a href="courses.html">Présentation</a></li>
           </ul>
         </li>
 
-        <li class="nav-item"><a href="events.html">Academies</a></li>
-        <li class="nav-item"><a href="events.html">Events</a></li>
 
+        <li class="nav-item dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">LA FORMATION <i class="fa fa-angle-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="news-single.html">Informatique</a></li>
+            <li><a href="news-single-2.html">Arabe</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Actualités <i class="fa fa-angle-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="news.html"><i class="fa fa-newspaper-o"></i> Liste d'actualités</a></li>
+          </ul>
+        </li>
         <li class="nav-item"><a href="contact.html">Contact</a></li>
       </ul><!--//nav-->
     </div><!--//navabr-collapse-->

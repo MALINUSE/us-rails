@@ -69,3 +69,5 @@ gem 'wysiwyg-rails'
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_admin_editor'
 gem 'autoprefixer-rails'
+
+gem 'bootstrap-wysihtml5-rails', github: 'nerian/bootstrap-wysihtml5-rails'
