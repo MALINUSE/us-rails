@@ -22,8 +22,8 @@ module UsRails
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.assets.precompile += %w(*.svg *.eot *.woff *.ttf *.gif *.png *.ico *.js *.css)
 
+    config.assets.initialize_on_precompile = false
 
   end
 end
