@@ -66,8 +66,8 @@ gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
 gem 'wysiwyg-rails'
 
 
-gem 'activeadmin', github: 'activeadmin'
-gem 'active_admin_editor'
-gem 'autoprefixer-rails'
+#gem 'activeadmin', github: 'activeadmin'
+#gem 'active_admin_editor'
+#gem 'autoprefixer-rails'
 
-gem 'bootstrap-wysihtml5-rails', github: 'nerian/bootstrap-wysihtml5-rails'
+#gem 'bootstrap-wysihtml5-rails', github: 'nerian/bootstrap-wysihtml5-rails'
