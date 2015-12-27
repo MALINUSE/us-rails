@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151219091920) do
+ActiveRecord::Schema.define(version: 20151227142429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,18 @@ ActiveRecord::Schema.define(version: 20151219091920) do
     t.datetime "image_updated_at"
   end
 
+  create_table "page_translations", force: :cascade do |t|
+    t.integer  "page_id",    null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.text     "content"
+  end
+
+  add_index "page_translations", ["locale"], name: "index_page_translations_on_locale", using: :btree
+  add_index "page_translations", ["page_id"], name: "index_page_translations_on_page_id", using: :btree
+
   create_table "pages", force: :cascade do |t|
     t.string   "name"
     t.string   "slug"
@@ -69,6 +81,18 @@ ActiveRecord::Schema.define(version: 20151219091920) do
 
   add_index "pages", ["slug"], name: "index_pages_on_slug", using: :btree
   add_index "pages", ["user_id"], name: "index_pages_on_user_id", using: :btree
+
+  create_table "post_translations", force: :cascade do |t|
+    t.integer  "post_id",    null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "title"
+    t.text     "body"
+  end
+
+  add_index "post_translations", ["locale"], name: "index_post_translations_on_locale", using: :btree
+  add_index "post_translations", ["post_id"], name: "index_post_translations_on_post_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"

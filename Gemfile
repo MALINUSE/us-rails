@@ -62,9 +62,13 @@ gem 'devise-bootstrap-views'
 gem 'paperclip', '~> 4.3'
 gem 'aws-sdk'
 
-gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
 gem 'wysiwyg-rails'
 
+gem 'mini_magick'
+gem 'figaro'
+
+gem 'rails-i18n', '~> 4.0.0' # for Rails 4
+gem 'geocoder'
 
 #gem 'activeadmin', github: 'activeadmin'
 #gem 'active_admin_editor'
