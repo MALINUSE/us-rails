@@ -22,7 +22,7 @@
           <p class="meta text-muted">By: <a href="#">Admin</a> | Posted on: <%= @post.published_at %></p>
 
           <p class="featured-image"><%= image_tag("news/news-1.jpg", class: "img-responsive") %></p>
-          <%= @post.body %>
+          <%= simple_format(@post.body, {}, sanitize: false) %>
         </article><!--//news-item-->
       </div><!--//news-wrapper-->
 

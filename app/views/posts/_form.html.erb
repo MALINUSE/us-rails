@@ -20,9 +20,21 @@
     </div><!--//form-group-->
     <div class="form-group body">
       <%= f.label :body %><br>
-      <div id="edit">
-      <%= f.text_area :body, id: "body", class: "form-control", placeholder: "Dody" %>
+      <div >
+      <%= f.text_area :body, id: "wysiwyg", class: "form-control", placeholder: "Dody" %>
       </div>
     </div><!--//form-group-->
     <%= f.submit :class => "btn btn-theme" %>
 <% end %>
+
+<script>
+  $('#wysiwyg').froalaEditor({
+    key: "<%=ENV['FROALA']%>",
+    heightMin: '200px',
+    toolbarButtons: [
+      'fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|',
+      'color', 'emoticons', 'inlineStyle', 'paragraphStyle', '|',
+      'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|',
+      'quote', 'insertHR', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html']
+  })
+</script>
