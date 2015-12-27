@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   mount Mercury::Engine => '/'
   resources :pages do
     member { post :mercury_update }
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   resources :comments
   resources :categories
   resources :posts
+  resources :images
   get 'welcomes/home'
   root 'welcomes#home'
 

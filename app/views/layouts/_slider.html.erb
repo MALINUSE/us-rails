@@ -1,36 +1,15 @@
 <div id="promo-slider" class="slider flexslider">
+  <% @images.each do |image| %>
   <ul class="slides">
     <li>
-      <%= image_tag("slides/slide-1.jpg") %>
+      <%= image_tag(image.image.url(:slider), size: "1140x350") %>
       <p class="flex-caption">
-        <span class="main" >Join College Green Online</span>
+        <span class="main" ><%= image.image_title %></span>
         <br />
-        <span class="secondary clearfix" >Choose from over 100 online and offline courses</span>
+        <span class="secondary clearfix" ><%= image.description %></span>
       </p>
     </li>
-    <li>
-      <%= image_tag("slides/slide-2.jpg") %>
-      <p class="flex-caption">
-        <span class="main" >Come to our Open Days</span>
-        <br />
-        <span class="secondary clearfix" >Donec accumsan nunc sed ipsum dapibus consectetur</span>
-      </p>
-    </li>
-    <li>
-      <%= image_tag("slides/slide-3.jpg") %>
-      <p class="flex-caption">
-        <span class="main" >Discover online courses</span>
-        <br />
-        <span class="secondary clearfix" >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
-      </p>
-    </li>
-    <li>
-      <%= image_tag("slides/slide-4.jpg") %>
-      <p class="flex-caption">
-        <span class="main" >Nam ultricies accumsan pellentesque</span>
-        <br />
-        <span class="secondary clearfix" >In justo orci, ornare vitae nulla sed, suscipit suscipit augue</span>
-      </p>
-    </li>
+
   </ul><!--//slides-->
+  <% end %>
 </div><!--//flexslider-->
