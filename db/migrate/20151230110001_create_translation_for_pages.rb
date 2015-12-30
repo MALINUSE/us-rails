@@ -1,4 +1,4 @@
-class CreatePageTranslations < ActiveRecord::Migration
+class CreateTranslationForPages < ActiveRecord::Migration
   def up
     Page.create_translation_table!({
                                        name: :string,
