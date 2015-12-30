@@ -1,8 +1,8 @@
 class Image < ActiveRecord::Base
-  has_attached_file :image, styles: {
-  news: "160x90>", single_news: "750x300>",
-  slider: "1140x350>", galery: "1024x576"
-  },
-  default_url: "/images/:style/missing.png"
+  has_attached_file :image,
+                    styles: { thumb: ["64x64#", :jpg],
+                              original: ['1130x350>', :jpg] },
+                    convert_options: { thumb: "-quality 75 -strip",
+                                       original: "-quality 100 -strip" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 end
