@@ -8,7 +8,6 @@ Rails.application.routes.draw do
       sign_up: 'register'
   }
 
-  resources :pages
   resources :links
   resources :comments
   resources :categories
