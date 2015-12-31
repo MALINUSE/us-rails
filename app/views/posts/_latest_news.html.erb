@@ -13,7 +13,7 @@
             <div class="item active">
               <div class="col-md-4 news-item">
                 <% @posts.each do |post| %>
-                    <h2 class="title"><a href="news-single.html"><%= post.title %></a></h2>
+                    <h2 class="title"><a href="<%= post_path post %>"><%= post.title %></a></h2>
                     <%= image_tag("news/news-thumb-1.jpg", class: "thumb") %>
                     <p>
                       <% post.body %>
@@ -42,7 +42,7 @@
             <div class="item active">
               <div class="col-md-4 news-item">
                 <% @posts.each do |post| %>
-                    <h2 class="title"><a href="news-single.html"><%= post.title %></a></h2>
+                    <h2 class="title"><a href="<%= post_path post %>"><%= post.title %></a></h2>
                     <%= image_tag("news/news-thumb-1.jpg", class: "thumb") %>
                     <p>
                       <% post.body %>

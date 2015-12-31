@@ -1,114 +1,73 @@
-<p id="notice"><%= notice %></p>
+<% if @l == :fr %>
+    <div class="page-wrapper">
+      <header class="page-heading clearfix">
+        <h1 class="heading-title pull-left"><%= @post.title %></h1>
 
-<div class="page-wrapper">
-  <header class="page-heading clearfix">
-    <h1 class="heading-title pull-left"><%= @post.title %></h1>
+        <div class="breadcrumbs pull-right">
+          <ul class="breadcrumbs-list">
+            <li class="breadcrumbs-label">You are here:</li>
+            <li><a href="<%= root_path %>">ACCEUIL</a><i class="fa fa-angle-right"></i></li>
+            <li><a href="<%= posts_path %>">ACTUALITÉS</a><i class="fa fa-angle-right"></i></li>
+            <li class="current"><%= @post.title %></li>
+          </ul>
+        </div><!--//breadcrumbs-->
 
-    <div class="breadcrumbs pull-right">
-      <ul class="breadcrumbs-list">
-        <li class="breadcrumbs-label">You are here:</li>
-        <li><a href="index.html">Home</a><i class="fa fa-angle-right"></i></li>
-        <li><a href="index.html">News</a><i class="fa fa-angle-right"></i></li>
-        <li class="current"><%= @post.title %></li>
-      </ul>
-    </div><!--//breadcrumbs-->
+      </header>
 
-  </header>
+      <div class="page-content">
+        <div class="row page-row">
+          <div class="news-wrapper col-md-8 col-sm-7">
+            <article class="news-item">
+              <p class="meta text-muted">By: <a href="#">Admin</a> | Posted on: <%= @post.published_at %></p>
 
-  <div class="page-content">
-    <div class="row page-row">
-      <div class="news-wrapper col-md-8 col-sm-7">
-        <article class="news-item">
-          <p class="meta text-muted">By: <a href="#">Admin</a> | Posted on: <%= @post.published_at %></p>
+              <p class="featured-image"><%= image_tag("news/news-1.jpg", class: "img-responsive") %></p>
+              <%= simple_format(@post.body, {}, sanitize: false) %>
+            </article><!--//news-item-->
+          </div><!--//news-wrapper-->
 
-          <p class="featured-image"><%= image_tag("news/news-1.jpg", class: "img-responsive") %></p>
-          <%= simple_format(@post.body, {}, sanitize: false) %>
-        </article><!--//news-item-->
-      </div><!--//news-wrapper-->
+          <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-12">
 
-      <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-12">
+            <%= render 'welcomes/events' %>
 
-        <section class="widget has-divider">
-          <h3 class="title">Other News</h3>
-          <article class="news-item row">
-            <figure class="thumb col-md-2 col-sm-3 col-xs-3">
-              <%= image_tag("news/news-thumb-1.jpg") %>
-            </figure>
-            <div class="details col-md-10 col-sm-9 col-xs-9">
-              <h4 class="title"><a href="news-single.html">Morbi bibendum consectetuer vulputate sollicitudin</a></h4>
-            </div>
-          </article><!--//news-item-->
-          <article class="news-item row">
-            <figure class="thumb col-md-2 col-sm-3 col-xs-3">
-              <%= image_tag("news/news-thumb-2.jpg") %>
-            </figure>
-            <div class="details col-md-10 col-sm-9 col-xs-9">
-              <h4 class="title"><a href="news-single.html">Sed tincidunt urna eget turpis pretium hendrerit</a></h4>
-            </div>
-          </article><!--//news-item-->
-          <article class="news-item row">
-            <figure class="thumb col-md-2 col-sm-3 col-xs-3">
-              <%= image_tag("news/news-thumb-3.jpg") %>
-            </figure>
-            <div class="details col-md-10 col-sm-9 col-xs-9">
-              <h4 class="title"><a href="news-single.html">Duis scelerisque erat iaculis</a></h4>
-            </div>
-          </article><!--//news-item-->
-          <article class="news-item row">
-            <figure class="thumb col-md-2 col-sm-3 col-xs-3">
-              <%= image_tag("news/news-thumb-4.jpg") %>
-            </figure>
-            <div class="details col-md-10 col-sm-9 col-xs-9">
-              <h4 class="title"><a href="news-single.html">Duis scelerisque erat iaculis</a></h4>
-            </div>
-          </article><!--//news-item-->
-        </section><!--//widget-->
+          </aside>
 
-        <section class="widget has-divider">
-          <h3 class="title">Upcoming Events</h3>
-          <article class="events-item row page-row">
-            <div class="date-label-wrapper col-md-3 col-sm-4 col-xs-4">
-              <p class="date-label">
-                <span class="month">FEB</span>
-                <span class="date-number">18</span>
-              </p>
-            </div><!--//date-label-wrapper-->
-            <div class="details col-md-9 col-sm-8 col-xs-8">
-              <h5 class="title">Open Day</h5>
+        </div><!--//page-row-->
+      </div><!--//page-content-->
+    </div><!--//page-->
+<% else %>
 
-              <p class="time text-muted">10:00am - 18:00pm<br>East Campus</p>
-            </div><!--//details-->
-          </article>
-          <article class="events-item row page-row">
-            <div class="date-label-wrapper col-md-3 col-sm-4 col-xs-4">
-              <p class="date-label">
-                <span class="month">SEP</span>
-                <span class="date-number">06</span>
-              </p>
-            </div><!--//date-label-wrapper-->
-            <div class="details col-md-9 col-sm-8 col-xs-8">
-              <h5 class="title">E-learning at College Green</h5>
+    <div class="page-wrapper">
+      <header class="page-heading clearfix">
+        <h1 class="heading-title pull-left"><%= @post.title %></h1>
 
-              <p class="time text-muted">10:00am - 16:00pm<br>Learning Center</p>
-            </div><!--//details-->
-          </article>
-          <article class="events-item row page-row">
-            <div class="date-label-wrapper col-md-3 col-sm-4 col-xs-4">
-              <p class="date-label">
-                <span class="month">JUN</span>
-                <span class="date-number">23</span>
-              </p>
-            </div><!--//date-label-wrapper-->
-            <div class="details col-md-9 col-sm-8 col-xs-8">
-              <h5 class="title">Career Fair</h5>
+        <div class="breadcrumbs pull-right">
+          <ul class="breadcrumbs-list">
+            <li class="breadcrumbs-label">أنت هنا:</li>
+            <li><a href="<%= root_path %>">الرئسيــة</a><i class="fa fa-angle-right"></i></li>
+            <li><a href="<%= posts_path %>">أنباء</a><i class="fa fa-angle-right"></i></li>
+            <li class="current"><%= @post.title %></li>
 
-              <p class="time text-muted">09:45am - 16:00pm<br>Library</p>
-            </div><!--//details-->
-          </article>
-        </section><!--//widget-->
+          </ul>
+        </div><!--//breadcrumbs-->
 
-      </aside>
+      </header>
 
-    </div><!--//page-row-->
-  </div><!--//page-content-->
-</div><!--//page-->
+      <div class="page-content">
+        <div class="row page-row">
+          <div class="news-wrapper col-md-8 col-sm-7">
+            <article class="news-item">
+              <p class="meta text-muted">By: <a href="#">Admin</a> | Posted on: <%= @post.published_at %></p>
+
+              <p class="featured-image"><%= image_tag("news/news-1.jpg", class: "img-responsive") %></p>
+              <%= simple_format(@post.body, {}, sanitize: false) %>
+            </article><!--//news-item-->
+          </div><!--//news-wrapper-->
+
+          <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-12">
+            <%= render 'welcomes/events' %>
+          </aside>
+
+        </div><!--//page-row-->
+      </div><!--//page-content-->
+    </div><!--//page-->
+<% end %>
