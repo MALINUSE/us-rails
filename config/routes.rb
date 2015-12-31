@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :images
   get 'welcomes/home'
+  get 'welcomes/contact'
   root 'welcomes#home'
   get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
 

@@ -1,4 +1,4 @@
-class CreatePostTranslations < ActiveRecord::Migration
+class CreateTranslationForPosts < ActiveRecord::Migration
   def up
     Post.create_translation_table!({
                                        title: :string,
@@ -11,5 +11,4 @@ class CreatePostTranslations < ActiveRecord::Migration
   def down
     Post.drop_translation_table! migrate_data: true
   end
-
 end

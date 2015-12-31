@@ -1,14 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @page.name %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @page.content %>
-</p>
-
-<%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
+<h1><span id="page_name" class="mercury-region" data-mercury="full"><%= @page.name %></span></h1>
+<div id="page_content" class="mercury-region" data-mercury="full">
+  <%= simple_format(@page.content, {}, sanitize: false) %>
+</div>

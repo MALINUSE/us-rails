@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   def getgalery
     @images = Image.all
+    @posts = Post.all
   end
 
   private
