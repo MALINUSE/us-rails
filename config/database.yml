@@ -80,6 +80,12 @@ test:
 #
 production:
   <<: *default
-  database: us-rails_production
+  database: us_production
   username: imidsac
-  password: <%= ENV['PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+
+staging:
+  <<: *default
+  database: us_production
+  username: imidsac
+  password: <%= ENV['DATABASE_PASSWORD'] %>

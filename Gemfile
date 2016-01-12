@@ -70,8 +70,15 @@ gem 'figaro'
 gem 'rails-i18n', '~> 4.0.0' # for Rails 4
 gem 'geocoder'
 
+gem 'bootstrap_form', '~> 2.3.0'
+
+
 #gem 'activeadmin', github: 'activeadmin'
 #gem 'active_admin_editor'
 #gem 'autoprefixer-rails'
 
 #gem 'bootstrap-wysihtml5-rails', github: 'nerian/bootstrap-wysihtml5-rails'
+
+gem 'capistrano', '~> 3.4.0'
+gem 'capistrano-rails', '~> 1.1'
+gem 'capistrano-passenger'
