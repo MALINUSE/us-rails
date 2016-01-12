@@ -86,6 +86,6 @@ production:
 
 staging:
   <<: *default
-  database: us_production
+  database: us_staging
   username: imidsac
   password: <%= ENV['DATABASE_PASSWORD'] %>
