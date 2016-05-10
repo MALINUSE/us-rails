@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.2.3'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
@@ -45,40 +45,34 @@ group :development do
   gem 'spring'
 end
 
-group :production do
-# Heroku
-  gem 'rails_12factor'
-end
 
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-rails'
+gem 'devise-bootstrap-views'
+
 gem 'will_paginate'
 
 gem 'globalize', '~> 5.0.0'
 
 gem 'devise', '~> 3.2'
-gem 'devise-bootstrap-views'
 
 gem 'paperclip', '~> 4.3'
-gem 'aws-sdk'
 
 gem 'wysiwyg-rails'
 
 gem 'mini_magick'
-gem 'figaro'
 
 gem 'rails-i18n', '~> 4.0.0' # for Rails 4
 gem 'geocoder'
 
 gem 'bootstrap_form', '~> 2.3.0'
 
-
-#gem 'activeadmin', github: 'activeadmin'
-#gem 'active_admin_editor'
-#gem 'autoprefixer-rails'
-
-#gem 'bootstrap-wysihtml5-rails', github: 'nerian/bootstrap-wysihtml5-rails'
-
+# Deploy
 gem 'capistrano', '~> 3.4.0'
 gem 'capistrano-rails', '~> 1.1'
 gem 'capistrano-passenger'
+gem 'capistrano-rvm'
+gem 'capistrano-bundler'
+
+# Schedule
+gem 'whenever', :require => false
