@@ -1,2 +1,38 @@
-<h1>Welcome#home</h1>
-<p>Find me in app/views/welcome/home.html.erb</p>
+<div id="promo-slider" class="slider flexslider">
+  <%= render 'slider_public' %>
+</div><!--//flexslider-->
+<section class="promo box box-dark">
+  <%= render 'promobox_public' %>
+</section><!--//promo-->
+
+<section class="news">
+  <%= render 'news_public' %>
+</section><!--//news-->
+
+<div class="row cols-wrapper">
+  <div class="col-md-3">
+    <section class="events">
+      <%= render 'events_public' %>
+    </section><!--//events-->
+  </div><!--//col-md-3-->
+  <div class="col-md-6">
+    <section class="course-finder">
+      <%= render 'cours_public' %>
+    </section><!--//course-finder-->
+    <section class="video">
+      <%= render 'videos_public' %>
+    </section><!--//video-->
+  </div>
+  <div class="col-md-3">
+    <section class="links">
+      <%= render 'links_public' %>
+    </section><!--//links-->
+    <section class="testimonials">
+      <%= render 'testimonials_public' %>
+    </section><!--//testimonials-->
+  </div><!--//col-md-3-->
+</div><!--//cols-wrapper-->
+
+<section class="awards">
+  <%= render 'awards_public' %>
+</section>
