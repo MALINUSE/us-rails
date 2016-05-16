@@ -1,8 +1,10 @@
-<div id="promo-slider" class="slider flexslider">
-  <%= render 'slider_public' %>
-</div><!--//flexslider-->
+<% if @sliders.size != 0 %>
+    <div id="promo-slider" class="slider flexslider">
+      <%= render 'slider_public' %>
+    </div><!--//flexslider-->
+<% end %>
 <section class="promo box box-dark">
-  <%= render 'promobox_public' %>
+  <%#= render 'promobox_public' %>
 </section><!--//promo-->
 
 <section class="news">

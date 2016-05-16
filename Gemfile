@@ -82,3 +82,5 @@ gem 'capistrano-bundler'
 
 # Schedule
 gem 'whenever', :require => false
+
+gem 'paperclip', '~> 4.3'
