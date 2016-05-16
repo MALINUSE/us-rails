@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516101854) do
+ActiveRecord::Schema.define(version: 20160516110207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,9 @@ ActiveRecord::Schema.define(version: 20160516101854) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
-    t.text "description"
+    t.text "body"
+    t.boolean "published"
+    t.datetime "published_at"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -82,6 +84,18 @@ ActiveRecord::Schema.define(version: 20160516101854) do
   end
 
   add_index "subjects", ["user_id"], name: "index_subjects_on_user_id", using: :btree
+
+  create_table "translation_for_pages", force: :cascade do |t|
+  end
+
+  create_table "translation_for_posts", force: :cascade do |t|
+  end
+
+  create_table "translation_for_sections", force: :cascade do |t|
+  end
+
+  create_table "translation_for_subjects", force: :cascade do |t|
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
