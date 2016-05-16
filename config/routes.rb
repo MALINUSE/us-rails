@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root 'welcome#home'
+  get 'show/:permalink', :to => 'welcome#show'
+  get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
+
 
   devise_for :users,
              controllers: {

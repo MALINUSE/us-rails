@@ -15,7 +15,7 @@
 //= require prettyphoto-rails
 //= require prettyphoto-rails-dev
 //= require jquery_ujs
-//= require turbolinks
+// require turbolinks
 //= require jquery.flexslider-min
 //= require jquery-placeholder
 //= require back-to-top
