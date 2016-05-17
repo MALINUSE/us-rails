@@ -55,6 +55,7 @@ gem 'flexslider'
 gem 'jquery-placeholder-rails'
 
 gem 'devise-bootstrap-views'
+gem 'bootstrap_form', '~> 2.3.0'
 
 gem 'will_paginate'
 
