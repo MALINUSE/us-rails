@@ -1,10 +1,10 @@
-class ApplicationController < ActionController::Base
+class Admin::ApplicationController < ActionController::Base
   before_action :set_locale
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  layout 'public'
+  layout 'admin/admin'
 
   private
   def set_locale
