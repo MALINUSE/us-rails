@@ -18,7 +18,7 @@
             <div class="profile-data">
               <div class="profile-data-name"><%= current_user.email %></div>
 
-              <div class="profile-data-title"><%= current_user.user_type %></div>
+              <div class="profile-data-title"><%= current_user.role %></div>
 
             </div>
             <div class="profile-controls">
@@ -38,7 +38,7 @@
           panneau d'administration
         </li>
         <li>
-          <%= link_to admin_path do %>
+          <%= link_to admin_dashboard_path do %>
               <span class="fa fa-th-large"></span>
               <span class="xn-text">Tableau de bord</span>
           <% end %>
@@ -50,7 +50,7 @@
               <span class="xn-text">des postes</span>
           <% end %>
         </li>
-        <% if current_user.user_type == "superAdmin" %>
+        <% if current_user.role == "superAdmin" %>
             <li>
               <%= link_to admin_user_data_path do %>
                   <span class="fa fa-user"></span>
@@ -83,7 +83,7 @@
             <div class="profile-data">
               <div class="profile-data-name"><%= current_user.email %></div>
 
-              <div class="profile-data-title"><%= current_user.user_type %></div>
+              <div class="profile-data-title"><%= current_user.role %></div>
 
             </div>
             <div class="profile-controls">
@@ -101,7 +101,7 @@
 
         <li class="xn-title">لوحة الادارة</li>
         <li>
-          <%= link_to admin_path do %>
+          <%= link_to admin_dashboard_path do %>
               <span class="fa fa-th-large"></span>
               <span class="xn-text">لوحة القيادة</span>
           <% end %>
@@ -113,7 +113,7 @@
               <span class="xn-text">المشاركات</span>
           <% end %>
         </li>
-        <% if current_user.user_type == "superAdmin" %>
+        <% if current_user.role == "superAdmin" %>
             <li>
               <%= link_to admin_user_data_path do %>
                   <span class="fa fa-user"></span>
