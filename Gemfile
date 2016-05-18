@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.2.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
@@ -54,7 +54,6 @@ gem 'gmaps-rails'
 gem 'flexslider'
 gem 'jquery-placeholder-rails'
 
-gem 'devise-bootstrap-views'
 gem 'bootstrap_form', '~> 2.3.0'
 
 gem 'will_paginate'
@@ -62,17 +61,19 @@ gem 'will_paginate'
 gem 'globalize', '~> 5.0.0'
 
 gem 'devise', '~> 3.2'
+gem 'devise-bootstrap-views'
 
 gem 'paperclip', '~> 4.3'
+gem 'aws-sdk'
 
 gem 'wysiwyg-rails'
 
 gem 'mini_magick'
+gem 'figaro'
 
 gem 'rails-i18n', '~> 4.0.0' # for Rails 4
 gem 'geocoder'
 
-gem 'bootstrap_form', '~> 2.3.0'
 
 # Deploy
 gem 'capistrano', '~> 3.4.0'
