@@ -52,7 +52,7 @@
         </li>
         <% if current_user.role == "superAdmin" %>
             <li>
-              <%= link_to admin_user_data_path do %>
+              <%= link_to admin_dashboard_path do %>
                   <span class="fa fa-user"></span>
                   <span class="xn-text">utilisateurs</span>
               <% end %>
@@ -115,7 +115,7 @@
         </li>
         <% if current_user.role == "superAdmin" %>
             <li>
-              <%= link_to admin_user_data_path do %>
+              <%= link_to admin_dashboard_path do %>
                   <span class="fa fa-user"></span>
                   <span class="xn-text">المستخدمي</span>
               <% end %>
