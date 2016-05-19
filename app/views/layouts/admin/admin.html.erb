@@ -4,7 +4,6 @@
   <title>UsRails</title>
   <%= stylesheet_link_tag 'admin', media: 'all' %>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
-  <%= javascript_include_tag 'admin' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -22,6 +21,7 @@
 
   <%= yield %>
 
+  <%= javascript_include_tag 'admin' %>
 </div>
 </body>
 </html>
