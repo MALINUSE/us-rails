@@ -1,2 +1,180 @@
-<h1>Admin::AdminUsers#index</h1>
-<p>Find me in app/views/admin/admin_users/index.html.erb</p>
+<% if @l == :fr %>
+    <!-- START X-NAVIGATION VERTICAL -->
+    <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+      <!-- TOGGLE NAVIGATION -->
+      <li class="xn-icon-button">
+        <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+      </li>
+      <!-- END TOGGLE NAVIGATION -->
+      <!-- SEARCH -->
+      <div class="info col-md-2 col-sm-2 col-md-offset-8">
+        <ul class="menu-top navbar-right hidden-xs">
+          <li class="divider"><%= link_to t('menu.languages.fr'), change_locale_path(:fr) %></li>
+          <li><%= link_to t('menu.languages.ar'), change_locale_path(:ar) %></li>
+        </ul><!--//menu-top-->
+        <br/>
+
+      </div>
+      <!-- END SEARCH -->
+      <!-- SIGN OUT -->
+      <li class="xn-icon-button pull-right">
+        <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+
+      </li>
+      <!-- END SIGN OUT -->
+      <!-- MESSAGES -->
+
+      <!-- END MESSAGES -->
+      <!-- TASKS -->
+
+      <!-- END TASKS -->
+    </ul>
+    <!-- END X-NAVIGATION VERTICAL -->
+
+    <!-- START BREADCRUMB -->
+    <ul class="breadcrumb">
+      <li><%= link_to "domicile", admin_dashboard_path %></li>
+      <li class="active">UTILISATEURS</li>
+    </ul>
+    <!-- END BREADCRUMB -->
+    <div class="page-content-wrap">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">UTILISATEURS</h3>
+              <div class="btn-group pull-right">
+                <%= link_to "Ajouter un utilisateur", new_admin_admin_user_path, class: "btn btn-primary" %>
+
+
+              </div>
+
+            </div>
+            <div class="panel-body">
+              <table id="customers2" class="table datatable">
+                <thead>
+                <tr>
+                  <th>ID</th>
+
+                  <th>EMAIL</th>
+                  <th>TYPE</th>
+                  <th>ACTION</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @users.each do |user| %>
+                    <tr>
+                      <td><%= user.id %></td>
+                      <td><%= user.email %></td>
+                      <td><%= user.role %></td>
+                      <td> <%= link_to edit_admin_admin_user_path(id: user.id), class: "btn btn-default btn-rounded btn-sm" do %>
+                            <span class="fa fa-pencil"></span>
+                        <% end %>
+                        <%= link_to admin_admin_user_path(id: user.id), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger btn-rounded btn-sm" do %>
+                            <span class="fa fa-times"></span>
+                        <% end %>
+                      </td>
+                    </tr>
+                <% end %>
+
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<% else %>
+
+    <!-- START X-NAVIGATION VERTICAL -->
+    <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+      <!-- TOGGLE NAVIGATION -->
+      <li class="xn-icon-button">
+        <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+      </li>
+      <!-- END TOGGLE NAVIGATION -->
+      <!-- SEARCH -->
+      <div class="info col-md-2 col-sm-2 col-md-offset-8">
+        <ul class="menu-top navbar-right hidden-xs">
+          <li class="divider"><%= link_to t('menu.languages.fr'), change_locale_path(:fr) %></li>
+          <li><%= link_to t('menu.languages.ar'), change_locale_path(:ar) %></li>
+        </ul><!--//menu-top-->
+        <br/>
+
+      </div>
+      <!-- END SEARCH -->
+      <!-- SIGN OUT -->
+      <li class="xn-icon-button pull-right">
+        <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+
+      </li>
+      <!-- END SIGN OUT -->
+      <!-- MESSAGES -->
+
+      <!-- END MESSAGES -->
+      <!-- TASKS -->
+
+      <!-- END TASKS -->
+    </ul>
+    <!-- END X-NAVIGATION VERTICAL -->
+
+    <!-- START BREADCRUMB -->
+    <ul class="breadcrumb">
+      <li><%= link_to "الصفحة الرئيسية", admin_dashboard_path %></li>
+      <li class="active">المستخدمين</li>
+    </ul>
+    <!-- END BREADCRUMB -->
+    <div class="page-content-wrap">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">المستخدمين</h3>
+              <div class="btn-group pull-right">
+                <%= link_to "إضافة مستخدم", new_admin_admin_user_path, class: "btn btn-primary" %>
+
+
+              </div>
+
+            </div>
+            <div class="panel-body">
+              <table id="customers2" class="table datatable">
+                <thead>
+                <tr>
+                  <th>هوية شخصية</th>
+
+                  <th>البريد الإلكتروني</th>
+                  <th>اكتب</th>
+                  <th> عمل</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @users.each do |user| %>
+                    <tr>
+                      <td><%= user.id %></td>
+                      <td><%= user.email %></td>
+                      <td><%= user.role %></td>
+                      <td> <%= link_to edit_admin_admin_user_path(id: user.id), class: "btn btn-default btn-rounded btn-sm" do %>
+                            <span class="fa fa-pencil"></span>
+                        <% end %>
+                        <%= link_to admin_admin_user_path(id: user.id), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger btn-rounded btn-sm" do %>
+                            <span class="fa fa-times"></span>
+                        <% end %>
+                      </td>
+                    </tr>
+                <% end %>
+
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<% end %>

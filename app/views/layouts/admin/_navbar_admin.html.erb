@@ -23,7 +23,7 @@
             </div>
             <div class="profile-controls">
               <div class="profile-controls">
-                <%= link_to edit_user_registration_path, class: "profile-control-left" do %>
+                <%= link_to edit_admin_admin_user_path(current_user.id), class: "profile-control-left" do %>
                     <span class="fa fa-info"></span>
                 <% end %>
 
@@ -52,7 +52,7 @@
         </li>
         <% if current_user.role == "superAdmin" %>
             <li>
-              <%= link_to admin_dashboard_path do %>
+              <%= link_to admin_admin_users_path do %>
                   <span class="fa fa-user"></span>
                   <span class="xn-text">utilisateurs</span>
               <% end %>
@@ -88,7 +88,7 @@
             </div>
             <div class="profile-controls">
               <div class="profile-controls">
-                <%= link_to edit_user_registration_path, class: "profile-control-left" do %>
+                <%= link_to edit_admin_admin_user_path(current_user.id), class: "profile-control-left" do %>
                     <span class="fa fa-info"></span>
                 <% end %>
 
@@ -115,7 +115,7 @@
         </li>
         <% if current_user.role == "superAdmin" %>
             <li>
-              <%= link_to admin_dashboard_path do %>
+              <%= link_to admin_admin_users_path do %>
                   <span class="fa fa-user"></span>
                   <span class="xn-text">المستخدمي</span>
               <% end %>

@@ -12,6 +12,7 @@
     <%= content_tag :div, msg, class: "alert alert-danger flash-popup", role: "alert" %>
 <% end %>
 
+<!-- START PAGE CONTAINER -->
 <div class="page-container">
 
   <!-- START PAGE SIDEBAR -->
@@ -24,6 +25,8 @@
 
   </div>
 
+  <!-- MESSAGE BOX-->
+  <%= render 'layouts/admin/logout' %>
 </div>
 <%= javascript_include_tag 'admin' %>
 

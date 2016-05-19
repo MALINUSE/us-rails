@@ -1,5 +1,7 @@
 class Admin::ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  before_action :check_user
+
   before_action :set_locale
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -36,6 +38,15 @@ class Admin::ApplicationController < ActionController::Base
       end
     end
     I18n.locale = @l
+  end
+
+  def check_user
+    if current_user.present?
+      if current_user.role == "superAdmin" || current_user.role == "admin" || current_user.role == "manager"
+      else
+        redirect_to root_path, notice: "Access Denied!"
+      end
+    end
   end
 
 end
