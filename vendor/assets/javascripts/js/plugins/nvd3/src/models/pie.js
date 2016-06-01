@@ -109,7 +109,7 @@ nv.models.pie = function () {
                         pointIndex: i,
                         pos: [d3.event.pageX, d3.event.pageY],
                         id: id
-                    });
+                });
                 })
                 .on('mouseout', function (d, i) {
                     d3.select(this).classed('hover', false);
@@ -119,7 +119,7 @@ nv.models.pie = function () {
                         point: d.data,
                         index: i,
                         id: id
-                    });
+                });
                 })
                 .on('click', function (d, i) {
                     dispatch.elementClick({
@@ -129,7 +129,7 @@ nv.models.pie = function () {
                         index: i,
                         pos: d3.event,
                         id: id
-                    });
+                });
                     d3.event.stopPropagation();
                 })
                 .on('dblclick', function (d, i) {
@@ -243,7 +243,7 @@ nv.models.pie = function () {
                                 var hashKey = createHashKey(center);
                                 if (labelLocationHash[hashKey]) {
                                     center[1] -= avgHeight;
-                                }
+                        }
                                 labelLocationHash[createHashKey(center)] = true;
                             }
                             return 'translate(' + center + ')'

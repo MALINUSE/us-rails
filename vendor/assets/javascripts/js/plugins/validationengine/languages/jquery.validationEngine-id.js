@@ -56,7 +56,7 @@
                 "future": {
                     "regex": "none",
                     "alertText": "* Tanggal sesudah "
-                },
+                },    
                 "maxCheckbox": {
                     "regex": "none",
                     "alertText": "* Maksimum ",
@@ -101,7 +101,7 @@
                         var match = pattern.exec(field.val());
                         if (match == null)
                             return false;
-
+                
                         var year = match[1];
                         var month = match[2] * 1;
                         var day = match[3] * 1;

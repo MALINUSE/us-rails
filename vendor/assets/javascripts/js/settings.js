@@ -44,7 +44,7 @@ var site_settings = '<div class="ts-button">'
 
     + '</div>'
     + '</div>';
-
+    
 var settings_block = document.createElement('div');
 settings_block.className = "theme-settings";
 settings_block.innerHTML = site_settings;
@@ -136,12 +136,12 @@ $(document).ready(function () {
 });
 
 function set_settings(theme_settings, option) {
-
+    
     /* Start Header Fixed */
     if (theme_settings.st_head_fixed == 1)
         $(".page-container").addClass("page-navigation-top-fixed");
     else
-        $(".page-container").removeClass("page-navigation-top-fixed");
+        $(".page-container").removeClass("page-navigation-top-fixed");    
     /* END Header Fixed */
 
     /* Start Sidebar Fixed */
@@ -156,7 +156,7 @@ function set_settings(theme_settings, option) {
         $(".page-sidebar").addClass("scroll").mCustomScrollbar("update");
     } else
         $(".page-sidebar").removeClass("scroll").css("height", "").mCustomScrollbar("disable", true);
-
+    
     /* END Sidebar Fixed */
 
     /* Start Right Sidebar */
@@ -229,14 +229,14 @@ function set_settings_checkbox(name, value) {
         }
         if (value === 0) {
             input.prop("checked", false);
-            input.parent("div").removeClass("checked");
+            input.parent("div").removeClass("checked");            
         }
         if (value === -1) {
             input.prop("checked", false);
             input.parent("div").removeClass("checked");
             input.prop("disabled", true);
             input.parent("div").addClass("disabled").parent(".check").addClass("disabled");
-        }
-
+        }        
+                
     }
 }

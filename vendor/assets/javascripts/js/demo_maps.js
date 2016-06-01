@@ -117,7 +117,7 @@ $(document).ready(function () {
 
             var gSearch = new google.maps.Map(document.getElementById('google_search_map'), {
                 mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
+        });
 
             var defaultBounds = new google.maps.LatLngBounds(
                 new google.maps.LatLng(-33.8902, 151.1759),
@@ -153,7 +153,7 @@ $(document).ready(function () {
                         icon: image,
                         title: place.name,
                         position: place.geometry.location
-                    });
+            });
 
                     markers.push(marker);
 
@@ -167,7 +167,7 @@ $(document).ready(function () {
                 var bounds = gSearch.getBounds();
                 searchBox.setBounds(bounds);
             });
-        }
+    }
 
         google.maps.event.addDomListener(window, 'load', google_map_search);
 

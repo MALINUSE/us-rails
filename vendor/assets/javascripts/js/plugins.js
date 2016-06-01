@@ -4,10 +4,10 @@ $(function () {
         // Bootstrap datepicker
         var feDatepicker = function () {
             if ($(".datepicker").length > 0) {
-                $(".datepicker").datepicker({format: 'yyyy-mm-dd'});
+                $(".datepicker").datepicker({format: 'yyyy-mm-dd'});                
                 $("#dp-2,#dp-3,#dp-4").datepicker(); // Sample
-            }
-
+            }           
+            
         }// END Bootstrap datepicker
 
         //Bootstrap timepicker
@@ -19,7 +19,7 @@ $(function () {
             // 24 hours mode timepicker
             if ($(".timepicker24").length > 0)
                 $(".timepicker24").timepicker({minuteStep: 5, showSeconds: true, showMeridian: false});
-
+            
         }// END Bootstrap timepicker
 
         //Daterangepicker 
@@ -65,7 +65,7 @@ $(function () {
         //Validation Engine
         var feValidation = function () {
             if ($("form[id^='validate']").length > 0) {
-
+                
                 // Validation prefix for custom form elements
                 var prefix = "valPref_";
 
@@ -90,14 +90,14 @@ $(function () {
         var feMasked = function () {
             if ($("input[class^='mask_']").length > 0) {
                 $("input.mask_tin").mask('99-9999999');
-                $("input.mask_ssn").mask('999-99-9999');
+                $("input.mask_ssn").mask('999-99-9999');        
                 $("input.mask_date").mask('9999-99-99');
                 $("input.mask_product").mask('a*-999-a999');
                 $("input.mask_phone").mask('99 (999) 999-99-99');
                 $("input.mask_phone_ext").mask('99 (999) 999-9999? x99999');
-                $("input.mask_credit").mask('9999-9999-9999-9999');
+                $("input.mask_credit").mask('9999-9999-9999-9999');        
                 $("input.mask_percent").mask('99%');
-            }
+            }            
         }//END Masked Inputs
 
         //Bootstrap tooltip
@@ -187,23 +187,23 @@ $(function () {
                 $(".datatable_simple").on('page.dt', function () {
                     onresize(100);
                 });
-            }
+            }            
         }//END Datatable        
 
         //RangeSlider // This function can be removed or cleared.
         var uiRangeSlider = function () {
-
+            
             //Default Slider with start value
             if ($(".defaultSlider").length > 0) {
                 $(".defaultSlider").each(function () {
                     var rsMin = $(this).data("min");
                     var rsMax = $(this).data("max");
 
-                    $(this).rangeSlider({
+                    $(this).rangeSlider({                        
                         bounds: {min: 1, max: 200},
                         defaultValues: {min: rsMin, max: rsMax}
                     });
-                });
+                });                                
             }//End Default
 
             //Date range slider
@@ -213,7 +213,7 @@ $(function () {
                         bounds: {min: new Date(2012, 1, 1), max: new Date(2015, 12, 31)},
                         defaultValues: {min: new Date(2012, 10, 15), max: new Date(2014, 12, 15)}
                     });
-                });
+                });                                                
             }//End date range slider
 
             //Range slider with predefinde range            
@@ -227,7 +227,7 @@ $(function () {
                         range: {min: 20, max: 40},
                         defaultValues: {min: rsMin, max: rsMax}
                     });
-                });
+                });                                
             }//End
 
             //Range Slider with custom step
@@ -236,12 +236,12 @@ $(function () {
                     var rsMin = $(this).data("min");
                     var rsMax = $(this).data("max");
 
-                    $(this).rangeSlider({
+                    $(this).rangeSlider({                        
                         bounds: {min: 1, max: 200},
                         defaultValues: {min: rsMin, max: rsMax},
                         step: 10
                     });
-                });
+                });                                                
             }//End
 
         }//END RangeSlider
@@ -251,15 +251,15 @@ $(function () {
 
             if ($(".knob").length > 0) {
                 $(".knob").knob();
-            }
-
+            }            
+            
         }//End Knob
 
         // Start Smart Wizard
         var uiSmartWizard = function () {
 
             if ($(".wizard").length > 0) {
-
+                
                 //Check count of steps in each wizard
                 $(".wizard > ul").each(function () {
                     $(this).addClass("steps_" + $(this).children("li").length);
@@ -267,7 +267,7 @@ $(function () {
 
                 // This par of code used for example
                 if ($("#wizard-validation").length > 0) {
-
+                    
                     var validator = $("#wizard-validation").validate({
                         rules: {
                             login: {
@@ -297,18 +297,18 @@ $(function () {
                             adress: {
                                 required: true
                             }
-                        }
+                            }
                     });
-
+                        
                 }// End of example
 
-                $(".wizard").smartWizard({
+                $(".wizard").smartWizard({                        
                     // This part of code can be removed FROM
                     onLeaveStep: function (obj) {
                         var wizard = obj.parents(".wizard");
 
                         if (wizard.hasClass("wizard-validation")) {
-
+                            
                             var valid = true;
 
                             $('input,textarea', $(obj.attr("href"))).each(function (i, v) {
@@ -317,12 +317,12 @@ $(function () {
 
                             if (!valid) {
                                 wizard.find(".stepContainer").removeAttr("style");
-                                validator.focusInvalid();
+                                validator.focusInvalid();                                
                                 return false;
                             }
 
-                        }
-
+                        }    
+                        
                         return true;
                     },// <-- TO
 
@@ -331,19 +331,19 @@ $(function () {
                         var wizard = obj.parents(".wizard");
 
                         if (wizard.hasClass("show-submit")) {
-
+                        
                             var step_num = obj.attr('rel');
                             var step_max = obj.parents(".anchor").find("li").length;
 
                             if (step_num == step_max) {
                                 obj.parents(".wizard").find(".actionBar .btn-primary").css("display", "block");
-                            }
+                            }                         
                         }
-                        return true;
+                        return true;                         
                     }//End
                 });
-            }
-
+            }            
+            
         }// End Smart Wizard
 
         //OWL Carousel
@@ -391,7 +391,7 @@ $(function () {
                             ["insert", ["link", "picture", "video"]]
                         ]
                     });
-                });
+                });                
             }
             /* END Lite summernote editor */
 
@@ -409,7 +409,7 @@ $(function () {
                         ['height', ['height']]
                     ]
                 });
-
+                
             }
             /* END Email summernote editor */
 
@@ -475,13 +475,13 @@ $(function () {
             }
 
             if ($(".plugin-clock").length > 0) {
-
+                
                 tp_clock_time();
 
                 window.setInterval(function () {
                     tp_clock_time();
                 }, 10000);
-
+                
             }
         }
 
@@ -528,8 +528,8 @@ $(function () {
                             revert: true,
                             revertDuration: 0
                         });
-                    });
-
+                    });                    
+                    
                 }
 
 
@@ -593,7 +593,7 @@ $(function () {
                     }
                 });
 
-            }
+            }            
         }
 
         return {
@@ -605,8 +605,8 @@ $(function () {
 
     formElements.init();
     uiElements.init();
-    templatePlugins.init();
-
+    templatePlugins.init();    
+    
     fullCalendar.init();
 
     /* My Custom Progressbar */
@@ -649,8 +649,8 @@ $(function () {
 
         if (action == 'destroy') {
             $(".mpb").remove();
-        }
-
+        }                
+        
     }
     /* Eof My Custom Progressbar */
 

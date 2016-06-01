@@ -1,7 +1,7 @@
 $(function () {
     /* reportrange */
     if ($("#reportrange").length > 0) {
-        $("#reportrange").daterangepicker({
+        $("#reportrange").daterangepicker({                    
             ranges: {
                 'Today': [moment(), moment()],
                 'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
@@ -60,7 +60,7 @@ $(function () {
 
     var hoverDetail = new Rickshaw.Graph.HoverDetail({graph: rdc});
 
-    window.addEventListener('resize', rdc_resize);
+    window.addEventListener('resize', rdc_resize);        
 
     rdc_resize();
     /* END Rickshaw dashboard chart */
@@ -122,7 +122,7 @@ $(function () {
         gridTextSize: '10px',
         lineColors: ['#3FBAE4', '#33414E'],
         gridLineColor: '#E5E5E5'
-    });
+    });   
     /* EMD Line dashboard chart */
 
     /* Vector Map */

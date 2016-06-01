@@ -89,7 +89,7 @@
                     // Float literals may be "imaginary"
                     stream.eat(/J/i);
                     return 'number';
-                }
+            }
                 // Integers
                 var intLiteral = false;
                 // Hex
@@ -106,7 +106,7 @@
                     stream.eat(/J/i);
                     // TODO - Can you have imaginary longs?
                     intLiteral = true;
-                }
+            }
                 // Zero by itself with no other piece of number.
                 else if (stream.match(/^0(?![\dx])/i)) {
                     intLiteral = true;
@@ -115,7 +115,7 @@
                     // Integer literals may be "long"
                     stream.eat(/L/i);
                     return 'number';
-                }
+            }
             }
 
             // Handle Strings
@@ -168,11 +168,11 @@
 
             if (stream.match(keywords)) {
                 return 'keyword';
-            }
+        }
 
             if (stream.match(identifiers)) {
                 return 'variable';
-            }
+        }
 
             // Handle non-detected items
             stream.next();
@@ -189,17 +189,17 @@
                     if (stream.match(delimiter)) {
                         state.tokenize = tokenBase;
                         return OUTCLASS;
-                    } else {
+                } else {
                         stream.eat(/['"]/);
                     }
                 }
                 if (singleline) {
                     if (parserConf.singleLineStringErrors) {
-                        return ERRORCLASS;
+                    return ERRORCLASS;
                     } else {
                         state.tokenize = tokenBase;
-                    }
                 }
+            }
                 return OUTCLASS;
             };
         }
@@ -217,7 +217,7 @@
                     return 'variable';
                 } else {
                     return ERRORCLASS;
-                }
+            }
             }
 
 
@@ -228,14 +228,14 @@
             if (indentInfo === 'dedent') {
                 if (dedent(stream, state)) {
                     return ERRORCLASS;
-                }
+            }
             }
             delimiter_index = '])}'.indexOf(current);
             if (delimiter_index !== -1) {
                 if (dedent(stream, state)) {
                     return ERRORCLASS;
-                }
             }
+        }
 
             return style;
         }

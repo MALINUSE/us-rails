@@ -56,7 +56,7 @@
                 "future": {
                     "regex": "none",
                     "alertText": "* תאריך מאוחר מ "
-                },
+                },	
                 "maxCheckbox": {
                     "regex": "none",
                     "alertText": "* מותרות לכל היותר ",
@@ -94,7 +94,7 @@
                     "regex": /^[\-\+]?((([0-9]{1,3})([,][0-9]{3})*)|([0-9]+))?([\.]([0-9]+))?$/,
                     "alertText": "* מספר בעל נקודה עשרונית לא תקין"
                 },
-                "date": {
+                "date": {                    
                     //	Check if date is valid by leap year
                     "func": function (field) {
                         var pattern = new RegExp(/^(\d{4})[\/\-\.](0?[1-9]|1[012])[\/\-\.](0?[1-9]|[12][0-9]|3[01])$/);

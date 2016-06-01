@@ -119,7 +119,7 @@
             if (stream.eatSpace()) {
                 return 'space';
                 //return null;
-            }
+        }
 
             var ch = stream.peek();
 
@@ -152,7 +152,7 @@
                     // Float literals may be "imaginary"
                     stream.eat(/J/i);
                     return 'number';
-                }
+            }
                 // Integers
                 var intLiteral = false;
                 // Hex
@@ -169,7 +169,7 @@
                     stream.eat(/J/i);
                     // TODO - Can you have imaginary longs?
                     intLiteral = true;
-                }
+            }
                 // Zero by itself with no other piece of number.
                 else if (stream.match(/^0(?![\dx])/i)) {
                     intLiteral = true;
@@ -178,7 +178,7 @@
                     // Integer literals may be "long"
                     stream.eat(/L/i);
                     return 'number';
-                }
+            }
             }
 
             // Handle Strings
@@ -259,11 +259,11 @@
 
             if (stream.match(builtinObjs)) {
                 return 'variable-2';
-            }
+        }
 
             if (stream.match(identifiers)) {
                 return 'variable';
-            }
+        }
 
             // Handle non-detected items
             stream.next();
@@ -280,17 +280,17 @@
                     if (stream.match(delimiter)) {
                         state.tokenize = tokenBase;
                         return OUTCLASS;
-                    } else {
+                } else {
                         stream.eat(/['"]/);
                     }
                 }
                 if (singleline) {
                     if (parserConf.singleLineStringErrors) {
-                        return ERRORCLASS;
+                    return ERRORCLASS;
                     } else {
                         state.tokenize = tokenBase;
-                    }
                 }
+            }
                 return OUTCLASS;
             };
         }
@@ -338,7 +338,7 @@
                     state.currentIndent += state.nextLineIndent;
                     state.nextLineIndent = 0;
                     state.doInCurrentLine = 0;
-                }
+            }
                 var style = tokenLexer(stream, state);
 
                 state.lastToken = {style: style, content: stream.current()};

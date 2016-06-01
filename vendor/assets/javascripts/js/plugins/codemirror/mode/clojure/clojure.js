@@ -81,13 +81,13 @@
             if (ch === '0' && stream.eat(/x/i)) {
                 stream.eatWhile(tests.hex);
                 return true;
-            }
+        }
 
             // leading sign
             if (( ch == '+' || ch == '-' ) && ( tests.digit.test(stream.peek()) )) {
                 stream.eat(tests.sign);
                 ch = stream.next();
-            }
+        }
 
             if (tests.digit.test(ch)) {
                 stream.eat(ch);
@@ -96,15 +96,15 @@
                 if ('.' == stream.peek()) {
                     stream.eat('.');
                     stream.eatWhile(tests.digit);
-                }
+            }
 
                 if (stream.eat(tests.exponent)) {
                     stream.eat(tests.sign);
-                    stream.eatWhile(tests.digit);
-                }
+                stream.eatWhile(tests.digit);
+            }
 
                 return true;
-            }
+        }
 
             return false;
         }
@@ -116,7 +116,7 @@
             // Just read all lowercase letters.
             if (first && first.match(/[a-z]/) && stream.match(/[a-z]+/, true)) {
                 return;
-            }
+        }
             // Read unicode character: \u1000 \uA0a1
             if (first === "u") {
                 stream.match(/[0-9a-z]{4}/i, true);
@@ -152,7 +152,7 @@
 
                                 state.mode = false;
                                 break;
-                            }
+                        }
                             escaped = !escaped && next == "\\";
                         }
                         returnType = STRING; // continue on in string mode
@@ -198,7 +198,7 @@
                                     pushStack(state, indentTemp + NORMAL_INDENT_UNIT, ch);
                                 } else {
                                     pushStack(state, indentTemp + stream.current().length, ch); // else we match
-                                }
+                            }
                             }
                             stream.backUp(stream.current().length - 1); // undo all the eating
 
@@ -207,7 +207,7 @@
                             returnType = BRACKET;
                             if (state.indentStack != null && state.indentStack.type == (ch == ")" ? "(" : (ch == "]" ? "[" : "{"))) {
                                 popStack(state);
-                            }
+                        }
                         } else if (ch == ":") {
                             stream.eatWhile(tests.symbol);
                             return ATOM;

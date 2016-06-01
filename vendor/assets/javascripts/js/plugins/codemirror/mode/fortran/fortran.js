@@ -159,7 +159,7 @@
                     if (next == quote && !escaped) {
                         end = true;
                         break;
-                    }
+        }
                     escaped = !escaped && next == "\\";
                 }
                 if (end || !escaped) state.tokenize = null;

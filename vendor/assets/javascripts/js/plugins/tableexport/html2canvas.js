@@ -99,10 +99,10 @@
                 case '"':
                     if (!quote) {
                         quote = c;
-                    }
+                }
                     else if (quote === c) {
                         quote = null;
-                    }
+                }
                     break;
 
                 case '(':
@@ -115,7 +115,7 @@
                         continue;
                     } else {
                         numParen++;
-                    }
+                }
                     break;
 
                 case ')':
@@ -125,12 +125,12 @@
                     else if (mode === 1) {
                         if (numParen === 0) {
                             mode = 0;
-                            block += c;
+                        block += c;
                             appendResult();
-                            continue;
-                        } else {
+                        continue;
+                    } else {
                             numParen--;
-                        }
+                    }
                     }
                     break;
 
@@ -147,11 +147,11 @@
                             args.push(definition);
                             definition = '';
                             block += c;
-                            continue;
-                        }
+                        continue;
+                    }
                     }
                     break;
-            }
+        }
 
             block += c;
             if (mode === 0) {
@@ -218,7 +218,7 @@
             // Put in the new values to get a computed value out
             if (rsLeft) {
                 element.runtimeStyle.left = element.currentStyle.left;
-            }
+        }
             style.left = attribute === "fontSize" ? "1em" : (value || 0);
             value = style.pixelLeft + "px";
 
@@ -226,12 +226,12 @@
             style.left = left;
             if (rsLeft) {
                 element.runtimeStyle.left = rsLeft;
-            }
         }
+    }
 
         if (!/^(thin|medium|thick)$/i.test(value)) {
             return Math.round(parseFloat(value)) + "px";
-        }
+    }
 
         return value;
     }
@@ -259,8 +259,8 @@
                 } else {
                     // IE 9 doesn't return double digit always
                     value[1] = value[0];
-                }
             }
+        }
             value[1] = (value[1].indexOf("%") === -1) ? toPX(element, attribute + "Y", value[1]) : value[1];
         }
         return value;
@@ -758,7 +758,7 @@
                                             gradient.cy,
                                             gradient.y1 - gradient.cy
                                         );
-                                    }
+                }
                                     break;
                                 case 'closest-side':
                                 case 'contain': // is equivalent to closest-side
@@ -781,11 +781,11 @@
                                             gradient.cy,
                                             gradient.y1 - gradient.cy
                                         );
-                                    }
+                }
                                     break;
 
                                 // TODO: add support for "30px 40px" sizes (webkit only)
-                            }
+            }
                         }
 
                         // color stops
@@ -913,7 +913,7 @@
                     number -= decimal[v];
                     roman += romanArray[v];
                 }
-            }
+    }
 
             return roman;
         };
@@ -1110,9 +1110,9 @@
                         for (var k = 0, l = rules.length; k < l; k++) {
                             if (findPsuedoEls.test(rules[k].selectorText)) {
                                 classes.push(rules[k].selectorText);
-                            }
+            }
                         }
-                    }
+        }
                     catch (e) { // will throw security exception for style sheets loaded from external domains
                     }
                 }
@@ -1160,7 +1160,7 @@
                         job.el.insertBefore(job.pseudo, job.el.firstChild);
                     } else {
                         job.el.appendChild(job.pseudo);
-                    }
+        }
                 });
             }
         }
@@ -1392,7 +1392,7 @@
                     if (bounds) {
                         drawText(text, bounds.left, bounds.bottom, ctx);
                         renderTextDecoration(ctx, textDecoration, bounds, metrics, color);
-                    }
+        }
                 });
             }
         }
@@ -1426,7 +1426,7 @@
                 while (childs[++i] !== el) {
                     if (childs[i].nodeType === 1) {
                         count++;
-                    }
+        }
                 }
                 return count;
             } else {
@@ -2143,7 +2143,7 @@
                         case "matrix":
                             matrix = match[2].split(",").map(Util.trimText).map(Util.asFloat);
                             break;
-                    }
+        }
                 }
             }
 
@@ -2232,7 +2232,7 @@
                         renderImage(ctx, element, image, bounds, borders);
                     } else {
                         Util.log("html2canvas: Error loading <img>:" + element.getAttribute('src'));
-                    }
+        }
                     break;
                 case "INPUT":
                     // TODO add all relevant type's, i.e. HTML5 new stuff
@@ -2452,7 +2452,7 @@
                 } else if (background_image.method.match(/\-?gradient$/)) {
                     if (bounds === undefined) {
                         bounds = _html2canvas.Util.Bounds(el);
-                    }
+        }
                     loadGradientImage(background_image.value, bounds);
                 }
             });
@@ -2512,7 +2512,7 @@
 
                         proxyGetImage(img.src, img, imageObj);
                         return;
-                    }
+        }
                 }
 
                 images.numLoaded++;
@@ -2558,7 +2558,7 @@
                         };
                         images.numTotal++;
                         proxyGetImage(src, img, imageObj);
-                    }
+        }
                 }
 
             },
@@ -2569,7 +2569,7 @@
                         Util.log("html2canvas: Cleanup because: " + cause);
                     } else {
                         Util.log("html2canvas: Cleanup after timeout: " + options.timeout + " ms.");
-                    }
+        }
 
                     for (src in images) {
                         if (images.hasOwnProperty(src)) {
@@ -2588,9 +2588,9 @@
                                 images.numLoaded++;
                                 images.numFailed++;
                                 Util.log("html2canvas: Cleaned up failed img: '" + src + "' Steps: " + images.numLoaded + " / " + images.numTotal);
-                            }
+            }
                         }
-                    }
+        }
 
                     // cancel any pending requests
                     if (window.stop !== undefined) {
@@ -2682,7 +2682,7 @@
                             context[zi] = [];
                         }
                         context[zi].push(stub);
-                    }
+        }
 
                     node.zIndex.children.forEach(function (childNode) {
                         insert(contextForChildren, childNode, childrenDest);
@@ -2865,7 +2865,7 @@
                 if (typeof options.onparsed === "function") {
                     if (options.onparsed(queue) === false) {
                         return;
-                    }
+        }
                 }
 
                 canvas = _html2canvas.Renderer(queue, options);

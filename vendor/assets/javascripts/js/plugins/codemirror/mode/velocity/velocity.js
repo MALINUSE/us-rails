@@ -38,7 +38,7 @@
             if ((ch == "'") && state.inParams) {
                 state.lastTokenWasBuiltin = false;
                 return chain(stream, state, tokenString(ch));
-            }
+        }
             // start of parsed string?
             else if ((ch == '"')) {
                 state.lastTokenWasBuiltin = false;
@@ -47,7 +47,7 @@
                     return "string";
                 }
                 else if (state.inParams)
-                    return chain(stream, state, tokenString(ch));
+                return chain(stream, state, tokenString(ch));
             }
             // is it one of the special signs []{}().,;? Seperator?
             else if (/[\[\]{}\(\),;\.]/.test(ch)) {
@@ -56,7 +56,7 @@
                 else if (ch == ")") {
                     state.inParams = false;
                     state.lastTokenWasBuiltin = true;
-                }
+            }
                 return null;
             }
             // start of a number value?
@@ -87,12 +87,12 @@
                 // is it one of the specials?
                 if (specials && specials.propertyIsEnumerable(stream.current())) {
                     return "keyword";
-                }
+            }
                 else {
                     state.lastTokenWasBuiltin = true;
                     state.beforeParams = true;
                     return "builtin";
-                }
+            }
             }
             // is it a operator?
             else if (isOperatorChar.test(ch)) {
@@ -111,19 +111,19 @@
                 if (functions && functions.propertyIsEnumerable(word) ||
                     (stream.current().match(/^#@?[a-z0-9_]+ *$/i) && stream.peek() == "(") && !(functions && functions.propertyIsEnumerable(word.toLowerCase()))) {
                     state.beforeParams = true;
-                    state.lastTokenWasBuiltin = false;
+                state.lastTokenWasBuiltin = false;
                     return "keyword";
-                }
+            }
                 if (state.inString) {
-                    state.lastTokenWasBuiltin = false;
+                state.lastTokenWasBuiltin = false;
                     return "string";
-                }
+            }
                 if (stream.pos > word.length && stream.string.charAt(stream.pos - word.length - 1) == "." && state.lastTokenWasBuiltin)
                     return "builtin";
                 // default: just a "word"
                 state.lastTokenWasBuiltin = false;
                 return null;
-            }
+        }
         }
 
         function tokenString(quote) {
@@ -133,14 +133,14 @@
                     if ((next == quote) && !escaped) {
                         end = true;
                         break;
-                    }
+                }
                     if (quote == '"' && stream.peek() == '$' && !escaped) {
                         state.inString = true;
                         end = true;
-                        break;
-                    }
-                    escaped = !escaped && next == "\\";
+                    break;
                 }
+                    escaped = !escaped && next == "\\";
+            }
                 if (end) state.tokenize = tokenBase;
                 return "string";
             };
@@ -154,7 +154,7 @@
                     break;
                 }
                 maybeEnd = (ch == "*");
-            }
+        }
             return "comment";
         }
 
@@ -164,12 +164,12 @@
                 if (ch == "#" && maybeEnd == 2) {
                     state.tokenize = tokenBase;
                     break;
-                }
+            }
                 if (ch == "]")
                     maybeEnd++;
                 else if (ch != " ")
                     maybeEnd = 0;
-            }
+        }
             return "meta";
         }
 

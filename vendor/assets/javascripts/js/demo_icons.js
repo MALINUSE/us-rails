@@ -4,7 +4,7 @@ $(function () {
         if ($(this).find("i").length > 0) {
             var iClass = $(this).find("i").attr("class");
         } else {
-            var iClass = $(this).find("span").not("span[class=glyphicon-class]").attr("class");
+            var iClass = $(this).find("span").not("span[class=glyphicon-class]").attr("class");            
         }
 
         var icon_preview = $("<i></i>").addClass(iClass);

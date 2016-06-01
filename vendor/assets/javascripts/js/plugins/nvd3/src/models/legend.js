@@ -87,13 +87,13 @@ nv.models.legend = function () {
                         // is to set all other series' to false, and make the double clicked series enabled.
                         data.forEach(function (series) {
                             series.disabled = true;
-                        });
+                });
                         d.disabled = false;
                         dispatch.stateChange({
                             disabled: data.map(function (d) {
                                 return !!d.disabled
                             })
-                        });
+                });
                     }
                 });
             seriesEnter.append('circle')

@@ -23,7 +23,7 @@ $(document).ready(function () {
             $(".faq").removeHighlight();
 
             var items = $(".faq .faq-text:containsi('" + keyword + "')");
-
+            
             items.highlight(keyword);
 
             items.each(function () {

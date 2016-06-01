@@ -8,6 +8,6 @@ function delete_row(row) {
         $("#" + row).hide("slow", function () {
             $(this).remove();
         });
-    });
+        });
 
 }

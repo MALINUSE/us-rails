@@ -59,7 +59,7 @@
         function isDecimalNumber(stream, backup) {
             if (backup === true) {
                 stream.backUp(1);
-            }
+        }
             return stream.match(decimalMatcher);
         }
 
@@ -97,7 +97,7 @@
 
                                 state.mode = false;
                                 break;
-                            }
+                        }
                             escaped = !escaped && next == "\\";
                         }
                         returnType = STRING; // continue on in scheme-string mode
@@ -109,7 +109,7 @@
 
                                 state.mode = false;
                                 break;
-                            }
+                        }
                             maybeEnd = (next == "|");
                         }
                         returnType = COMMENT;
@@ -122,8 +122,8 @@
                         } else {
                             // if not we just comment the entire of the next token
                             stream.eatWhile(/[^/s]/); // eat non spaces
-                            returnType = COMMENT;
-                            break;
+                        returnType = COMMENT;
+                        break;
                         }
                     default: // default parsing mode
                         var ch = stream.next();
@@ -139,7 +139,7 @@
                                 state.mode = "comment"; // toggle to comment mode
                                 returnType = COMMENT;
                             } else if (stream.eat(/[tf]/i)) {            // #t/#f (atom)
-                                returnType = ATOM;
+                            returnType = ATOM;
                             } else if (stream.eat(';')) {                // S-Expr comment
                                 state.mode = "s-expr-comment";
                                 returnType = COMMENT;
@@ -147,7 +147,7 @@
                                 var numTest = null, hasExactness = false, hasRadix = true;
                                 if (stream.eat(/[ei]/i)) {
                                     hasExactness = true;
-                                } else {
+                            } else {
                                     stream.backUp(1);       // must be radix specifier
                                 }
                                 if (stream.match(/^#b/i)) {
@@ -169,10 +169,10 @@
                                     if (hasRadix && !hasExactness) {
                                         // consume optional exactness after radix
                                         stream.match(/^#[ei]/i);
-                                    }
+                                }
                                     if (numTest(stream))
                                         returnType = NUMBER;
-                                }
+                            }
                             }
                         } else if (/^[-+0-9.]/.test(ch) && isDecimalNumber(stream, true)) { // match non-prefixed number, must be decimal
                             returnType = NUMBER;
@@ -205,7 +205,7 @@
                                     pushStack(state, indentTemp + 1, ch);
                                 } else {
                                     pushStack(state, indentTemp + stream.current().length, ch); // else we match
-                                }
+                            }
                             }
                             stream.backUp(stream.current().length - 1); // undo all the eating
 
@@ -221,9 +221,9 @@
                                     if (--state.sExprComment == 0) {
                                         returnType = COMMENT; // final closing bracket
                                         state.sExprComment = false; // turn off s-expr commenting mode
-                                    }
                                 }
                             }
+                        }
                         } else {
                             stream.eatWhile(/[\w\$_\-!$%&*+\.\/:<=>?@\^~]/);
 

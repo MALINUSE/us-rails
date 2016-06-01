@@ -629,7 +629,7 @@
             // mouse pointer has entered a range label
             var label = e.target.innerHTML;
             if (label == this.locale.customRangeLabel) {
-                this.updateView();
+                this.updateView();                
             } else {
                 var dates = this.ranges[label];
                 this.container.find('input[name=daterangepicker_start]').val(dates[0].format(this.format));
@@ -683,7 +683,7 @@
         clickRange: function (e) {
             var label = e.target.innerHTML;
             this.chosenLabel = label;
-            if (label == this.locale.customRangeLabel) {
+            if (label == this.locale.customRangeLabel) {                
                 this.showCalendars();
                 if ($(".daterangepicker .calendar").is(":visible"))
                     $(".daterangepicker .calendar").hide();

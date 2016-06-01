@@ -186,7 +186,7 @@ nv.models.ohlcBar = function () {
                         pointIndex: i,
                         seriesIndex: 0,
                         e: d3.event
-                    });
+                });
                 })
                 .on('click', function (d, i) {
                     dispatch.elementClick({

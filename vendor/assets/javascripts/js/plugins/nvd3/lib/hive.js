@@ -81,7 +81,7 @@ d3.hive.link = function () {
     link.endRadius = function (_) {
         if (!arguments.length) return endRadius;
         endRadius = _;
-        return link;
+    return link;
     };
 
     return link;

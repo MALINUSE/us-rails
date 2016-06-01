@@ -11,11 +11,11 @@ $(document).ready(function () {
                     for (block = 0; block < Object.size(sCdata[row][column]); block++) {
                         $("#" + sCdata[row][column][block]).appendTo(".sortableContent .scRow:eq(" + row + ") .scCol:eq(" + column + ")");
                     }
-                }
+                }               
             }
             onload();
-        }
-
+        }                    
+       
         $(".sortableContent .scCol").sortable({
             connectWith: ".sortableContent .scCol",
             items: "> .panel",
@@ -25,13 +25,13 @@ $(document).ready(function () {
                 $(".scPlaceholder").height(ui.item.height() + 1);
             },
             stop: function (event, ui) {
-
+                
                 var sorted = {};
                 var row = 0;
                 $(".sortableContent .scRow").each(function () {
                     sorted[row] = {};
                     $(this).find(".scCol").each(function () {
-                        var column = $(this).index();
+                        var column = $(this).index();                        
                         sorted[row][column] = {};
 
                         $(this).find('.panel').each(function () {
@@ -49,8 +49,8 @@ $(document).ready(function () {
             portlet_delete_data(scid);
             location.reload();
         });
-    }
-
+    }        
+    
 });
 
 function portlet_get_data(portlet_id) {

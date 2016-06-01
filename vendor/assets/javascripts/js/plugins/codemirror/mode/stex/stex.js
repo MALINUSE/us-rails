@@ -17,7 +17,7 @@
     "use strict";
 
     CodeMirror.defineMode("stex", function () {
-        "use strict";
+    "use strict";
 
         function pushCommand(state, command) {
             state.cmdState.push(command);
@@ -28,14 +28,14 @@
                 return state.cmdState[state.cmdState.length - 1];
             } else {
                 return null;
-            }
+        }
         }
 
         function popCommand(state) {
             var plug = state.cmdState.pop();
             if (plug) {
                 plug.closeBracket();
-            }
+        }
         }
 
         // returns the non-default plugin closest to the end of the list
@@ -45,9 +45,9 @@
                 var plug = context[i];
                 if (plug.name == "DEFAULT") {
                     continue;
-                }
-                return plug;
             }
+                return plug;
+        }
             return {
                 styleIdentifier: function () {
                     return null;
@@ -65,7 +65,7 @@
 
                 this.styleIdentifier = function () {
                     return this.styles[this.bracketNo - 1] || null;
-                };
+            };
                 this.openBracket = function () {
                     this.bracketNo++;
                     return "bracket";
@@ -111,7 +111,7 @@
             // escape characters
             if (source.match(/^\\[$&%#{}_]/)) {
                 return "tag";
-            }
+        }
 
             // white space control characters
             if (source.match(/^\\[,;!\/\\]/)) {
@@ -143,7 +143,7 @@
                 // special case: % at end of its own line; stay in same state
                 if (!source.eol()) {
                     setState(state, inCComment);
-                }
+            }
                 return "comment";
             }
             else if (ch == '}' || ch == ']') {
@@ -153,7 +153,7 @@
                     setState(state, beginParams);
                 } else {
                     return "error";
-                }
+            }
                 return "bracket";
             } else if (ch == '{' || ch == '[') {
                 plug = plugins["DEFAULT"];
@@ -170,9 +170,9 @@
                 plug = getMostPowerful(state);
                 if (plug.name == 'begin') {
                     plug.argument = source.current();
-                }
-                return plug.styleIdentifier();
             }
+                return plug.styleIdentifier();
+        }
         }
 
         function inCComment(source, state) {
@@ -186,9 +186,9 @@
                 return null;
             }
             if (source.match(endModeSeq)) {
-                setState(state, normal);
+            setState(state, normal);
                 return "keyword";
-            }
+        }
             if (source.match(/^\\[a-zA-Z@]+/)) {
                 return "tag";
             }
@@ -223,9 +223,9 @@
             if (ch == "%") {
                 if (!source.eol()) {
                     source.skipToEnd();
-                }
-                return "comment";
             }
+                return "comment";
+        }
             return "error";
         }
 
@@ -235,9 +235,9 @@
                 lastPlug = peekCommand(state);
                 lastPlug.openBracket(ch);
                 source.eat(ch);
-                setState(state, normal);
+            setState(state, normal);
                 return "bracket";
-            }
+        }
             if (/[ \t\r]/.test(ch)) {
                 source.eat(ch);
                 return null;

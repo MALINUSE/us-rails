@@ -1,5 +1,5 @@
 $(function () {
-
+    
 
     // line chart
     var sin = [], cos = [], sin2 = [];
@@ -33,7 +33,7 @@ $(function () {
         rlp.render();
     }
 
-    window.addEventListener('resize', rlp_resize);
+    window.addEventListener('resize', rlp_resize); 
     rlp_resize();
     // eof lineplot
 
@@ -55,7 +55,7 @@ $(function () {
             {color: "#B64645", data: seriesData[2], name: 'Tokyo'}]
     });
 
-    rlc.render();
+    rlc.render();    
 
     var hoverDetail = new Rickshaw.Graph.HoverDetail({graph: rlc});
     var axes = new Rickshaw.Graph.Axis.Time({graph: rlc});
@@ -89,9 +89,9 @@ $(function () {
             color: '#B64645',
             data: [{x: 0, y: 43}, {x: 1, y: 35}, {x: 2, y: 46}, {x: 3, y: 49}, {x: 4, y: 34}, {x: 5, y: 42}]
         }]
-    });
+        });
 
-    rbc.render();
+        rbc.render();
 
     var rbc_resize = function () {
         rbc.configure({
@@ -106,7 +106,7 @@ $(function () {
     window.addEventListener('resize', rbc_resize);
     rbc_resize();
     // eof bar chart 
-
+    
     // Area Chart 
     var seriesData = [[], [], []];
     var random = new Rickshaw.Fixtures.RandomData(100);
@@ -124,7 +124,7 @@ $(function () {
             {color: "#B64645", data: seriesData[2], name: 'Returned'}]
     });
 
-    graph.render();
+        graph.render();
 
     var legend = new Rickshaw.Graph.Legend({graph: graph, element: document.getElementById('legend')});
     var shelving = new Rickshaw.Graph.Behavior.Series.Toggle({graph: graph, legend: legend});

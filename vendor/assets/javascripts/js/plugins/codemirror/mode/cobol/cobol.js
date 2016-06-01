@@ -203,7 +203,7 @@
                                 state.mode = false;
                                 break;
                             }
-                        }
+        }
                         returnType = STRING; // continue on in string mode
                         break;
                     default: // default parsing mode
@@ -234,7 +234,7 @@
                                     } else {
                                         col++;
                                     }
-                                }
+            }
                             }
                             if (keywords && keywords.propertyIsEnumerable(stream.current().toUpperCase())) {
                                 returnType = KEYWORD;
@@ -243,7 +243,7 @@
                             } else if (atoms && atoms.propertyIsEnumerable(stream.current().toUpperCase())) {
                                 returnType = ATOM;
                             } else returnType = null;
-                        }
+        }
                 }
                 return returnType;
             },

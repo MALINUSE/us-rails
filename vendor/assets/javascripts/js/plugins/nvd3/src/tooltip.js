@@ -208,7 +208,7 @@
                     if (svgBoundTop < 0) {
                         var containerBound = chartContainer.getBoundingClientRect();
                         svgBoundTop = (Math.abs(svgBoundTop) > containerBound.height) ? 0 : svgBoundTop;
-                    }
+                    } 
                     svgOffset.top = Math.abs(svgBoundTop - chartBound.top);
                     svgOffset.left = Math.abs(svgBound.left - chartBound.left);
                 }
@@ -332,7 +332,7 @@
     //Original tooltip.show function. Kept for backward compatibility.
     // pos = [left,top]
     nv.tooltip.show = function (pos, content, gravity, dist, parentContainer, classes) {
-
+      
         //Create new tooltip div if it doesn't exist on DOM.
         var container = document.createElement('div');
         container.className = 'nvtooltip ' + (classes ? classes : 'xy-tooltip');
@@ -361,7 +361,7 @@
     nv.tooltip.findFirstNonSVGParent = function (Elem) {
         while (Elem.tagName.match(/^g|svg$/i) !== null) {
             Elem = Elem.parentNode;
-        }
+            }
         return Elem;
     };
 
