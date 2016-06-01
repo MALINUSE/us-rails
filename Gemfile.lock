@@ -95,8 +95,6 @@ GEM
     execjs (2.6.0)
     figaro (1.1.1)
       thor (~> 0.14)
-    flexslider (2.2.0)
-      sass-rails (>= 3.1.0)
     font-awesome-rails (4.6.1.0)
       railties (>= 3.2, < 5.1)
     geocoder (1.2.13)
@@ -105,15 +103,12 @@ GEM
     globalize (5.0.1)
       activemodel (>= 4.2.0, < 4.3)
       activerecord (>= 4.2.0, < 4.3)
-    gmaps-rails (0.0.2)
-      rails
     i18n (0.7.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
     jmespath (1.2.4)
       json_pure (>= 1.8.1)
-    jquery-placeholder-rails (2.1.2)
     jquery-rails (4.1.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -146,11 +141,6 @@ GEM
       mime-types
       mimemagic (= 0.3.0)
     pg (0.18.4)
-    prettyphoto-rails (0.2.1)
-      jquery-rails
-      rails (>= 3.1)
-      sass-rails
-      uglifier
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -251,18 +241,14 @@ DEPENDENCIES
   devise (~> 3.2)
   devise-bootstrap-views
   figaro
-  flexslider
   font-awesome-rails
   geocoder
   globalize (~> 5.0.0)
-  gmaps-rails
   jbuilder (~> 2.0)
-  jquery-placeholder-rails
   jquery-rails
   mini_magick
   paperclip (~> 4.3)
   pg (~> 0.15)
-  prettyphoto-rails
   rails (= 4.2.6)
   rails-i18n (~> 4.0.0)
   sass-rails (~> 5.0)

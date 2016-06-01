@@ -49,10 +49,10 @@ end
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-rails'
 # plugins for education theme.
-gem 'prettyphoto-rails'
-gem 'gmaps-rails'
-gem 'flexslider'
-gem 'jquery-placeholder-rails'
+# gem 'prettyphoto-rails'
+# gem 'gmaps-rails'
+# gem 'flexslider'
+# gem 'jquery-placeholder-rails'
 
 gem 'bootstrap_form', '~> 2.3.0'
 
